@@ -3,14 +3,11 @@ import java.util.List;
 
 public class Book {
     private String title;
-    private List<Paragraph> paragraps;
-    private List<Image> images;
-    private List<Table> tables;
+    private Author author;
+    private List<Chapter> chapters;
 
     public Book() {
-        this.images = new ArrayList<>();
-        this.paragraps = new ArrayList<>();
-        this.tables = new ArrayList<>();
+        this.chapters = new ArrayList<>();
     }
 
     public Book(String title) {
@@ -18,29 +15,27 @@ public class Book {
         this.title = title;
     }
 
-    public void createNewParagraph(String paragraphTitle){
-        Paragraph p = new Paragraph(paragraphTitle);
-        this.paragraps.add(p);
+    public void addAuthor(Author author){
+        this.author = author;
     }
 
-    public void createNewImage(String imageTitle){
-        Image i = new Image(imageTitle);
-        this.images.add(i);
+    public int createChapter(String chapterTitle){
+        Chapter c = new Chapter(chapterTitle);
+        this.chapters.add(c);
+        return this.chapters.indexOf(c);
     }
 
-    public void createNewTable(String tableTitle){
-        Table t = new Table(tableTitle);
-        this.tables.add(t);
+    public Chapter getChapter(int index){
+        return this.chapters.get(index);
     }
 
     @Override
     public String toString() {
-        return "Book{\n " +
-                "title=" + title +
-                ",\n paragraps=" + paragraps +
-                ",\n images=" + images +
-                ",\n tables=" + tables +
-                "\n}";
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", \nauthor=" + author +
+                ", \nchapters=" + chapters +
+                '}';
     }
 
     public void print(){

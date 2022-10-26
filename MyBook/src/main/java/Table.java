@@ -10,6 +10,10 @@ public class Table {
 
     @Override
     public String toString() {
-        return title;
+        return "\n"+title;
+    }
+
+    public void print(){
+        System.out.print(this.toString());
     }
 }
