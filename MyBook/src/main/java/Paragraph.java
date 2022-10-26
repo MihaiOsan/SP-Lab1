@@ -1,4 +1,4 @@
-public class Paragraph {
+public class Paragraph implements Element{
     private String title;
 
     public Paragraph() {

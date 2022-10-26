@@ -3,14 +3,10 @@ import java.util.List;
 
 public class SubChapter {
     private String title;
-    private List<Paragraph> paragraps;
-    private List<Image> images;
-    private List<Table> tables;
+    private List<Element> elements;
 
     public SubChapter() {
-        this.images = new ArrayList<>();
-        this.paragraps = new ArrayList<>();
-        this.tables = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public SubChapter(String title) {
@@ -20,26 +16,24 @@ public class SubChapter {
 
     public void createNewParagraph(String paragraphTitle){
         Paragraph p = new Paragraph(paragraphTitle);
-        this.paragraps.add(p);
+        this.elements.add(p);
     }
 
     public void createNewImage(String imageTitle){
         Image i = new Image(imageTitle);
-        this.images.add(i);
+        this.elements.add(i);
     }
 
     public void createNewTable(String tableTitle){
         Table t = new Table(tableTitle);
-        this.tables.add(t);
+        this.elements.add(t);
     }
 
     @Override
     public String toString() {
         return "SubChapter{" +
                 "title='" + title + '\'' +
-                ", \nparagraps=" + paragraps +
-                ", \nimages=" + images +
-                ", \ntables=" + tables +
+                ", \nelements=" + elements +
                 '}';
     }
 
