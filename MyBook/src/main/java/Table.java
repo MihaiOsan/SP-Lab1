@@ -10,7 +10,7 @@ public class Table implements Element{
 
     @Override
     public String toString() {
-        return "\n"+title;
+        return title;
     }
 
     public void print(){
