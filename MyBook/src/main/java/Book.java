@@ -21,8 +21,7 @@ public class Book extends Section{
         this.add(e);
     }
 
-    @Override
-    public String toString() {
+    public void print(){
         String output = "Book: "  + super.getTitle() +
                 "\n\nAuthors:\n";
 
@@ -30,11 +29,7 @@ public class Book extends Section{
             output = output + "Author: "+aut.toString()+"\n\n";
         }
 
-        return output;
-    }
-
-    public void print(){
-        System.out.print(this.toString());
+        System.out.print(output);
         super.print();
     }
 }

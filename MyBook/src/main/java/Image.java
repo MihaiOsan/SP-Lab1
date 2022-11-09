@@ -8,12 +8,8 @@ public class Image implements Element{
         this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return title;
-    }
 
     public void print(){
-        System.out.print(this.toString());
+        System.out.print(this.title);
     }
 }
