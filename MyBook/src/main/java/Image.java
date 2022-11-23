@@ -1,4 +1,7 @@
-public class Image implements Element{
+import java.awt.*;
+import java.util.concurrent.TimeUnit;
+
+public class Image implements Element, Picture{
     private String title;
 
     public Image() {
@@ -6,10 +9,25 @@ public class Image implements Element{
 
     public Image(String title) {
         this.title = title;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
     public void print(){
         System.out.print(this.title);
+    }
+
+    @Override
+    public String getUrl() {
+        return this.title;
+    }
+
+    @Override
+    public Dimension getDim() {
+        return null;
     }
 }
