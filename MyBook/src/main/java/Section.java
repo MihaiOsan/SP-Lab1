@@ -50,4 +50,12 @@ public class Section implements Element{
             System.out.print("\n");
         }
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
+        for (Element el : this.childs){
+            el.accept(v);
+        }
+    }
 }

@@ -18,6 +18,11 @@ public class ImageProxy implements Element, Picture{
     }
 
     @Override
+    public void accept(Visitor v) {
+        v.visitImageProxy(this);
+    }
+
+    @Override
     public String getUrl() {
         return this.url;
     }

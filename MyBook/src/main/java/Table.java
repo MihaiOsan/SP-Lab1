@@ -12,4 +12,9 @@ public class Table implements Element{
     public void print(){
         System.out.print(this.title);
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitTable(this);
+    }
 }

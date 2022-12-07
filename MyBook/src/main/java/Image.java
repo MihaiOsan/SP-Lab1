@@ -22,6 +22,11 @@ public class Image implements Element, Picture{
     }
 
     @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
+    }
+
+    @Override
     public String getUrl() {
         return this.title;
     }
