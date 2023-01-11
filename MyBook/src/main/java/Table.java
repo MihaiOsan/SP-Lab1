@@ -1,4 +1,7 @@
-public class Table implements Element{
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Table implements Element, Serializable {
     private String title;
 
     public Table() {
@@ -14,7 +17,7 @@ public class Table implements Element{
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitTable(this);
     }
 }

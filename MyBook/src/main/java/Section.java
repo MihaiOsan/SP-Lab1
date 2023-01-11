@@ -1,7 +1,9 @@
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section implements Element, Serializable {
     private String title;
     private List<Element> childs;
 
@@ -52,7 +54,7 @@ public class Section implements Element{
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitSection(this);
         for (Element el : this.childs){
             el.accept(v);

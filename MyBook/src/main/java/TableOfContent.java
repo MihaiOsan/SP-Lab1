@@ -1,4 +1,7 @@
-public class TableOfContent implements Element {
+import java.io.IOException;
+import java.io.Serializable;
+
+public class TableOfContent implements Element, Serializable {
     private String title;
 
     public TableOfContent() {
@@ -14,7 +17,7 @@ public class TableOfContent implements Element {
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitTableOfContent(this);
     }
 }

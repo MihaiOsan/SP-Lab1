@@ -1,7 +1,12 @@
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends Section{
+
+public class Book extends Section implements Serializable {
     private List<Author> authors;
 
     public Book() {
@@ -32,4 +37,5 @@ public class Book extends Section{
         System.out.print(output);
         super.print();
     }
+
 }

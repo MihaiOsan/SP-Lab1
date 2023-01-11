@@ -1,7 +1,9 @@
 import java.awt.*;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
-public class ImageProxy implements Element, Picture{
+public class ImageProxy implements Element, Picture, Serializable {
 
     private String url;
     private Image realImage;
@@ -18,7 +20,7 @@ public class ImageProxy implements Element, Picture{
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitImageProxy(this);
     }
 

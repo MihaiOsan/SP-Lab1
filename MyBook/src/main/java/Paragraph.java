@@ -1,4 +1,7 @@
-public class Paragraph implements Element{
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Paragraph implements Element, Serializable {
     private String title;
     private AlignStrategy alignStrategy;
 
@@ -28,7 +31,7 @@ public class Paragraph implements Element{
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitParagraph(this);
     }
 }

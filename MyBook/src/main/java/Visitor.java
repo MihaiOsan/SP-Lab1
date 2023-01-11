@@ -1,10 +1,16 @@
+import org.json.JSONException;
+
+import java.awt.print.Book;
+import java.io.IOException;
+
 public interface Visitor {
-    void visitBook(Book b);
-    void visitSection(Section s);
-    void visitTableOfContent(TableOfContent t);
-    void visitTable(Table t);
-    void visitParagraph(Paragraph p);
-    void visitImageProxy(ImageProxy i);
-    void visitImage(Image i);
+
+
+    void visitSection(Section s) throws IOException;
+    void visitTableOfContent(TableOfContent t) throws IOException;
+    void visitTable(Table t) throws IOException;
+    void visitParagraph(Paragraph p) throws IOException;
+    void visitImageProxy(ImageProxy i) throws IOException;
+    void visitImage(Image i) throws IOException;
 
 }

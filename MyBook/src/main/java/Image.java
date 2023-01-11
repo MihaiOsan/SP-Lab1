@@ -1,7 +1,9 @@
 import java.awt.*;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element, Picture{
+public class Image implements Element, Picture, Serializable {
     private String title;
 
     public Image() {
@@ -22,7 +24,7 @@ public class Image implements Element, Picture{
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v) throws IOException {
         v.visitImage(this);
     }
 

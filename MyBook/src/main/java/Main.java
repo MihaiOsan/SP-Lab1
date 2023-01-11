@@ -12,9 +12,12 @@ public class Main {
         cap1.add(new ImageProxy("ImageOne"));
         cap1.add(new Image("ImageTwo"));
         cap1.add(new Paragraph("Some text"));
-        cap1.add(new Table("Table 1"));
+        //cap1.add(new Table("Table 1"));
         BookStatistics stats = new BookStatistics();
         cap1.accept(stats);
         stats.printStatistics();
+        BookSaveVisitor sv = new BookSaveVisitor();
+        cap1.accept(sv);
+        sv.saveBook();
     }
 }
