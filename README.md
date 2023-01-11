@@ -10,3 +10,6 @@ https://github.com/MihaiOsan/SP-Lab1/tree/b9ec5ef55961c3725f28b889a64cc737cb3248
 - nu folosi toString(), la fiecare clasa metoda de print sa faci acolo formatarea si sa apelezi ceea ce trebuie.
 
 Nota 10
+
+# Nota finala propusa:
+10
